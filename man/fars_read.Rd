@@ -22,7 +22,9 @@ Reporting System (FARS) into a dplyr version of an R data frame. It stops if
 the file does not exist.
 }
 \examples{
+\dontrun{
 fars_read("accident_2015.csv.bz2")
+}
 
 \dontrun{
 fars_read()

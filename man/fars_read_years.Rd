@@ -30,8 +30,9 @@ For each year provided in the numeric vector argument to the
   which data are not available.
 }
 \examples{
+\dontrun{
 fars_read_years(c(2013,2014,2015))
-
+}
 \dontrun{
 fars_read_years(c(2016,2017))
 }

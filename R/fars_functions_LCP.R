@@ -22,7 +22,9 @@
 #' @importFrom dplyr tbl_df
 #'
 #' @examples
+#' \dontrun{
 #' fars_read("accident_2015.csv.bz2")
+#' }
 #'
 #' \dontrun{
 #' fars_read()
@@ -30,7 +32,6 @@
 #'
 #' @export
 fars_read <- function(filename) {
-        system.file("extdata", "filename", package = "FARSpackageLCP")
         if(!file.exists(filename))
                 stop("file '", filename, "' does not exist")
         data <- suppressMessages({
@@ -101,8 +102,9 @@ make_filename <- function(year) {
 #' @importFrom dplyr "%>%"
 #'
 #' @examples
+#' \dontrun{
 #' fars_read_years(c(2013,2014,2015))
-#'
+#'}
 #' \dontrun{
 #' fars_read_years(c(2016,2017))
 #' }
@@ -148,8 +150,9 @@ fars_read_years <- function(years) {
 #' @importFrom tidyr spread
 #'
 #' @examples
+#' \dontrun{
 #' fars_summarize_years(c(2013,2014,2015))
-#'
+#' }
 #' \dontrun{
 #' fars_summarize_years(c(2016,2017))
 #' }
@@ -158,7 +161,7 @@ fars_read_years <- function(years) {
 fars_summarize_years <- function(years) {
         dat_list <- fars_read_years(years)
         dplyr::bind_rows(dat_list) %>%
-                dplyr::group_by("year", "MONTH") %>%
+                dplyr::group_by(~year, ~MONTH) %>%
                 dplyr::summarize(n = ~n()) %>%
                 tidyr::spread("year", "n")
 }
@@ -195,8 +198,9 @@ fars_summarize_years <- function(years) {
 #' @importFrom graphics points
 #'
 #' @examples
+#' \dontrun{
 #' fars_map_state(28,2015)
-#'
+#' }
 #' \dontrun{
 #' fars_map_state(3,2015)
 #' }

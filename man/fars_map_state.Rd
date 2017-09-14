@@ -32,8 +32,9 @@ The make_filename function from this package generates a filename
   converted to NA if higher than 900 or 90, respectively.
 }
 \examples{
+\dontrun{
 fars_map_state(28,2015)
-
+}
 \dontrun{
 fars_map_state(3,2015)
 }

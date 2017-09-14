@@ -22,8 +22,9 @@ years to create a summary of the total number of FARS events per month and
 year.
 }
 \examples{
+\dontrun{
 fars_summarize_years(c(2013,2014,2015))
-
+}
 \dontrun{
 fars_summarize_years(c(2016,2017))
 }
