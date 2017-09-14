@@ -1,3 +1,5 @@
+https://travis-ci.org/Darwinita/FARSpackageLCP.svg?branch=master
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 FARSpackageLCP
 ==============
