@@ -1,0 +1,21 @@
+Package: FARSpackageLCP
+Type: Package
+Title: Five functions to process and analyze data from FARS 
+Version: 1.0.0
+License: GPL-2
+Depends: R (>= 3.0.0)
+Author: Lorenzo Carretero
+Maintainer: Lorenzo Carretero <lcpaulet@gmail.com>
+Description: The R package BuildinganRPackage implements five useful functions to process and analyze data from the Fatality Analysis Reporting System, FARS.
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
+Imports: readr,
+    dplyr,
+    tidyr,
+    maps,
+    graphics

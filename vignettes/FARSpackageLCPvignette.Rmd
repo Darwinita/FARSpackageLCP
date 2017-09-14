@@ -1,0 +1,90 @@
+---
+title: "FARSpackageLCPvignette"
+author: "Lorenzo Carretero"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FARSpackageLCPvignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The package includes the FARS dataset files from years 2013 to 2015. To access the raw data files the user can use the following line of code:
+
+```{r setup_2, eval=FALSE}
+system.file("extdata", "accident_2013.csv.bz2", package = "FARSpackageLCP")
+system.file("extdata", "accident_2014.csv.bz2", package = "FARSpackageLCP")
+system.file("extdata", "accident_2015.csv.bz2", package = "FARSpackageLCP")
+```
+
+
+# Description
+
+This is the vignette for the R package FARSpackageLCP written in R Markdown as a html_vignette document.  The R package FARSpackageLCP implements five useful functions to process and analyze data from the **Fatality Analysis Reporting System (FARS)**. The functions are the following:
+
+1. *fars_read*: A read data file function.
+2. *make_filename*: A simple function to create the filename of accident data for a given year.
+3. *fars_read_years*: A function to extraxct monthly data from a given set of years.
+4. *fars_summarize_years*: A function to summarize FARS events per month and year.
+5. *fars_map_state*: A function to create a map of FARS events and points plota for a given a state number and year.
+
+# Details
+The R package FARSpackageLCP has the following main goals:
+
+* Manage FRS data file names from user provided year(s).
+
+* Extract and summarize FARS data from user provided year(s).
+
+* Map FARS data per state and user provided year.
+
+# Installation
+
+From **CRAN**
+```{r Installation_1, eval=FALSE}
+install.packages('FARSpackageLCP')
+```
+
+From **GITHUB**
+
+```{r Installation2, eval=FALSE}
+devtools::install_github("Darwinita/FARSpackageLCP")
+```
+
+**LOAD** using
+
+```{r Installation3}
+library(FARSpackageLCP)
+```
+
+# Usage
+
+### Usage of fars_read
+fars_read(filename)
+
+#### Arguments
+filename, Is a character string with the name of the input data file.
+
+### Usage of make_filename
+make_filename(year)
+
+#### Arguments
+year, A numeric corresponding to the user provided year.
+
+### Usage of fars_read_years
+fars_read_years(years)
+
+#### Arguments
+years, Is a numeric vector containing the series of years for which to extract monthly FARS data.
+
+### Usage of fars_summarize_years
+fars_summarize_years(years)
+
+#### Arguments
+years, Is a numeric vector containing the series of years for which to summarize FARS data.
+
+### Usage of fars_map_state
+fars_map_state(state.num, year)
+
+#### Arguments
+state.num, Is a numeric corresponding to the user provided state number.
+year, A numeric corresponding to the user provided year.
